@@ -1,0 +1,17 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1      
+kind: TanzuKubernetesCluster                   
+metadata:
+  name: tkgs-cluster-1                          
+  namespace: tkgs-ns-1                       
+spec:
+  distribution:
+    version: v1.19.7  
+  topology:
+    controlPlane:
+      count: 1                                 
+      class: best-effort-medium                 
+      storageClass: vwt-storage-policy         
+    workers:
+      count: 3                                 
+      class: best-effort-medium                 
+      storageClass: vwt-storage-policy
